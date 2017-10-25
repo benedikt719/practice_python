@@ -1,0 +1,70 @@
+from random import shuffle
+import time
+def swap(x,i,j):
+
+    x[i],x[j] = x[j],x[i]
+
+
+#bubble sorting practice
+
+def bubblesort(x):
+
+    for size in reversed(range(len(x))):
+        for i in range(size):
+            if x[i] > x[i+1]:
+                swap(x,i,i+1)
+
+
+
+'''selection sorting practice
+-------------------------------------------------------------'''
+
+
+def selectionsort(x):
+
+    for size in reversed(range(len(x))):
+        max_i = 0
+        for i in range(1,1+size):
+            if x[i] > x[max_i]:
+                max_i = i
+
+        swap(x,max_i,size)
+
+    print(x)
+
+'''==============================================================
+'''
+
+
+
+def insertion_sort(x):
+    for size in range(1,len(x)):
+        val = x[size]
+        i = size
+        while i > 0 and x[i-1] > x[i]:
+            x[i] = x[i-1]
+            i -= 1
+        x[i] = val
+
+
+# how long does 'sort' takes?
+"""------------------------------------------------------------------"""
+
+def check_time(x):
+
+    s_time = time.time()
+
+    x
+
+    e_time = time.time()
+
+    print((e_time - s_time))
+
+
+"""shuffle """
+
+example = list((x for x in range(10)))
+shuffle(example)
+print(example)
+
+
